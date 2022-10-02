@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Cart from "../Pages/Cart";
 
 export default function Navbar() {
+  let [cart, showCart] = useState(false);
+
+  function cartbutton() {
+    showCart(!cart);
+  }
+
   return (
     <>
       <div
         style={{
-          maxWidth: "1024px",
+          maxWidth: "1200px",
           display: "flex",
           justifyContent: "space-between",
           margin: "auto",
@@ -81,7 +89,7 @@ export default function Navbar() {
           <img src="https://www.licious.in/img/rebranding/profile_icon.svg"></img>
           <a>Login</a>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex" }} onClick={cartbutton}>
           <div>
             <img src="https://www.licious.in/img/rebranding/cart_icon.svg"></img>
           </div>
@@ -91,6 +99,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {cart ? <Cart /> : ""}
     </>
   );
 }

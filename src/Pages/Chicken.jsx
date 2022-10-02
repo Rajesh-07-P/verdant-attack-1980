@@ -1,3 +1,6 @@
+import Filter from "../Components/filters";
+import AddButton from "./Addcartbutton";
+
 let list = [
   {
     image:
@@ -1252,11 +1255,12 @@ let list = [
 export default function Chicken() {
   return (
     <>
+      <Filter />
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3,1fr)",
-          maxWidth: "1024px",
+          maxWidth: "1200px",
           margin: "auto",
           gap: "20px 0px",
         }}
@@ -1267,18 +1271,30 @@ export default function Chicken() {
               style={{
                 width: "95%",
                 boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-                borderRadius:'5px',
+                borderRadius: "5px",
               }}
             >
               <img src={elem.image} style={{ width: "100%" }} />
-              <h5>{elem.title}</h5>
-              <p style={{ width: "50%" }}>{elem.desc}</p>
-              <p>{elem.weight}</p>
-              <h4 style={{color:'#D11243'}}>
-                MRP:₹<span>{elem.price}</span>
-              </h4>
-              <button style={{color:'white',backgroundColor:'#D11243',border:'0px',padding:'5px',cursor:'pointer'}}>ADD TO CART</button>
-              <div>
+              <div style={{maxWidth:'90%',margin:'auto'}}>
+                <h4 style={{fontWeight:"500",fontSize:'16px'}}>{elem.title}</h4>
+                <p style={{color:'grey',height:'70px'}}>{elem.desc}</p>
+                <p style={{fontWeight:'500'}}>{elem.weight}</p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "90%",
+                  margin: "auto",
+                  alignItems: "baseline",
+                }}
+              >
+                <h4 style={{ color: "#D11243", padding: "0px", margin: "0px" }}>
+                  MRP:₹<span>{elem.descprice || elem.mrp}</span>
+                </h4>
+                <AddButton/>
+              </div>
+              <div style={{display:'flex',margin:'auto',justifyContent:'center',gap:'5px'}}>
                 <img src="https://www.licious.in/img/rebranding/express_delivery.svg" />
                 <p>Today in {elem.time} mins</p>
               </div>
