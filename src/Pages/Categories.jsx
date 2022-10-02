@@ -68,7 +68,7 @@ let list = [
   },
   {
     image:
-      "https://dao54xqhg9jfa.cloudfront.net/OMS-Category/a70e9ea5-8119-fe47-8ed5-40ec9f96d9a0/original/Gourmet.png",
+      "https://dao54xqhg9jfa.cloudfront.net/OMS-Category/21653c3a-4d6d-da71-2432-6833b88e9629/original/RC.png",
     title: "Gourmet",
     id: "12",
   },
@@ -77,7 +77,10 @@ let list = [
 export default function Categories() {
   return (
     <>
-      <div style={{ maxWidth: "1024px", margin: "auto" }}>
+    <div>
+      <img src="https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62e142fbed5a8" style={{width:'100%'}}></img>
+    </div>
+      <div style={{ maxWidth: "1200px", margin: "auto" }}>
         <h3>Shop by Categories</h3>
         <p>Freshest meat just for you</p>
       </div>
@@ -85,7 +88,7 @@ export default function Categories() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(4,1fr)",
-          maxWidth: "1024px",
+          maxWidth: "1200px",
           margin: "auto",
           textAlign: "center",
           cursor: "pointer",
